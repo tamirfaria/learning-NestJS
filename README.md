@@ -11,9 +11,9 @@
 
 1. Install dependencies
 
-    `npm install -g nest`
+    `npm i -g @nestjs/cli`
 
-    `nest new`
+    `nest new project-name`
 2. Run native crud generator
 
     `nest g resource`
