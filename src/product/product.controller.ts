@@ -1,10 +1,17 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { randomUUID } from 'crypto';
 import { ProductRepository } from './product.repository';
 
 interface ProductParams {
+  id: string;
   name: string;
-  type: string;
+  price: string;
+  quantity: number;
+  description: string;
+  feature: { name: string; description: string }[];
+  images: { url: string; description: string }[];
+  category: string;
+  creationDate: string;
+  updateDate: string;
 }
 
 @Controller('/product')
@@ -13,17 +20,11 @@ export class ProductController {
 
   @Post()
   async createProducts(@Body() productParams: ProductParams) {
-    const parseParams = {
-      ...productParams,
-      id: randomUUID(),
-      createAt: new Date().toISOString().split('T')[0],
-    };
-
-    this.productRepository.saveProduct(parseParams);
+    this.productRepository.saveProduct(productParams);
 
     return {
       message: 'Product created successfuly.',
-      product: parseParams,
+      product: productParams,
     };
   }
 
