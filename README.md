@@ -7,6 +7,27 @@
 * [📙Simple CRUD - Alura+](https://www.youtube.com/watch?v=YHpG6t91oW8) | branch → learning-simple-crud-with-alura-plus
 * [📗TypeORM - Alura](https://cursos.alura.com.br/course/nest-js-typeorm) | branch → learning-TypeORM-with-alura
 
+____
+
+## 📘 Fundamentals - ALURA
+
+[Nest.js: criando uma API Restful](https://cursos.alura.com.br/course/nestjs-criando-api-resftul)
+
+> Let's build a RESTful API for a store without worrying about the database now
+
+1. Install dependencies
+
+    `npx @nestjs/cli new store`
+
+2. Delete unused files
+
+    `app.service.ts`
+    `app.e2e-spec.ts`
+    `app.controller.ts`
+3. Make your API, dude!
+
+____
+
 ## 📙 Simple CRUD - ALURA +
 
 1. Install dependencies
