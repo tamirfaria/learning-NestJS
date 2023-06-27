@@ -19,6 +19,13 @@ ____
 
     `npx @nestjs/cli new store`
 
+2. Delete unused files
+
+    `app.service.ts`
+    `app.e2e-spec.ts`
+    `app.controller.ts`
+3. Make your API, dude!
+
 ____
 
 ## 📙 Simple CRUD - ALURA +
