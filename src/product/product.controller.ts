@@ -1,26 +1,16 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
+import { randomUUID } from 'crypto';
+import { CreateProductDTO } from './dto/createProduct.dto';
 import { ProductRepository } from './product.repository';
-
-interface ProductParams {
-  id: string;
-  name: string;
-  price: string;
-  quantity: number;
-  description: string;
-  feature: { name: string; description: string }[];
-  images: { url: string; description: string }[];
-  category: string;
-  creationDate: string;
-  updateDate: string;
-}
 
 @Controller('/product')
 export class ProductController {
   constructor(private productRepository: ProductRepository) {}
 
   @Post()
-  async createProducts(@Body() productParams: ProductParams) {
-    this.productRepository.saveProduct(productParams);
+  async createProducts(@Body() productParams: CreateProductDTO) {
+    const parseParams = { ...productParams, id: randomUUID() };
+    this.productRepository.saveProduct(parseParams);
 
     return {
       message: 'Product created successfuly.',
