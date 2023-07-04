@@ -46,12 +46,12 @@ export class CreateProductDTO {
   description: string;
 
   @ValidateNested()
-  @IsArray()
+  @IsArray({ each: true })
   @Type(() => CharacterProductDTO)
   characters: CharacterProductDTO[];
 
   @ValidateNested()
-  @IsArray()
+  @IsArray({ each: true })
   @Type(() => ImageProductDTO)
   images: ImageProductDTO[];
 
