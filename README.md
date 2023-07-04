@@ -45,5 +45,10 @@ ____
 
     `REST API`
 
+### 🔎Note
+
+> **Synchronous and Asynchronous Validations**
+>
+>In summary, synchronous validations occur within the same execution flow of the program, blocking the execution until the validation is completed. Asynchronous validations, on the other hand, do not block the execution and allow other tasks to be performed while the validation is in progress. The choice between synchronous and asynchronous validations depends on the specific needs of your application and the operations you need to perform during the validation.
 ____
 🐖 that's all, folks (for now) 🐖
