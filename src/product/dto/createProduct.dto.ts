@@ -1,5 +1,6 @@
 import { Type } from 'class-transformer';
 import {
+  ArrayMinSize,
   IsArray,
   IsDateString,
   IsNotEmpty,
@@ -46,12 +47,14 @@ export class CreateProductDTO {
   description: string;
 
   @ValidateNested()
-  @IsArray({ each: true })
+  @IsArray()
+  @ArrayMinSize(1)
   @Type(() => CharacterProductDTO)
   characters: CharacterProductDTO[];
 
   @ValidateNested()
-  @IsArray({ each: true })
+  @IsArray()
+  @ArrayMinSize(1)
   @Type(() => ImageProductDTO)
   images: ImageProductDTO[];
 
